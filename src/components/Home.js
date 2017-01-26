@@ -1,5 +1,5 @@
 import React from 'react';
-import PostsContainer from './../containers/PostsContainer';
+import { PostsContainer } from './../Posts';
 
 export default (props) => {
   return (

@@ -3,7 +3,7 @@ import {
   GET_POSTS_SUCCESS,
   GET_POSTS_FAIL,
   initialState,
-} from './../actions/Posts';
+} from './actions';
 
 const postReducer = (state = initialState, action)=> {
   switch (action.type) {

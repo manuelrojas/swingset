@@ -2,8 +2,8 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import * as actions from './../actions/Posts';
-import Posts from './../components/Posts';
+import * as actions from './actions';
+import Posts from './Posts';
 
 class PostsContainer extends Component {
 
