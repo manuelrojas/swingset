@@ -11,7 +11,7 @@ export const initialState = {
   posts: []
 };
 
-export const getPosts = () => {
+const _getPosts = () => {
   return {
     ...initialState,
     loading: true,
@@ -19,7 +19,7 @@ export const getPosts = () => {
   }
 }
 
-export const getPostsSuccess = posts => {
+const _getPostsSuccess = posts => {
   return {
     ...initialState,
     type: GET_POSTS_SUCCESS,
@@ -28,7 +28,7 @@ export const getPostsSuccess = posts => {
   };
 }
 
-export const getPostsFail = error => {
+const _getPostsFail = error => {
   return {
     ...initialState,
     type: GET_POSTS_FAIL,
@@ -37,18 +37,18 @@ export const getPostsFail = error => {
   };
 }
 
-export const actionGetPosts = () => {
+export const getPosts = () => {
   return (dispatch, getState) => {
-    dispatch(getPosts());
+    dispatch(_getPosts());
 
     return Api.getPosts()
       .then( response => {
         setTimeout(()=> {
-          return dispatch(getPostsSuccess(response.data));
+          return dispatch(_getPostsSuccess(response.data));
         }, 1000);
       })
       .catch( error => {
-        return dispatch(getPostsFail(error))
+        return dispatch(_getPostsFail(error))
       });
   };
 }
