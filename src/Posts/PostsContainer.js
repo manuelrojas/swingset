@@ -22,6 +22,7 @@ class PostsContainer extends Component {
         loading={this.props.postsState.loading}
         loaded={this.props.postsState.loaded}
         error={this.props.postsState.error}
+        count={this.props.postsState.count || 10}
       ></Posts>
     );
   }

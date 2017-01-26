@@ -6,9 +6,16 @@ export default props => {
       {props.loading && (
         <span>Loading ...</span>
       )}
-      {props.posts && props.posts.map( (post, i) => {
-        return <p key={i}>{post.title}</p>;
-      })}
+      {props.posts && props.posts
+        .reduce( (posts, post, i) => {
+          if (i >= props.count) {
+            return posts;
+          }
+          posts.push(
+            <p key={i}>{post.title}</p>
+          );
+          return posts;
+        }, [])}
     </div>
   );
 }
